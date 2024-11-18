@@ -16,6 +16,8 @@
     "@eslint/js": "^9.13.0",
     "css-loader": "^7.1.2",
     "eslint": "^9.13.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
     "globals": "^15.11.0",
     "html-loader": "^5.1.0",
     "html-webpack-plugin": "^5.6.0",
