@@ -13,7 +13,7 @@ class Node{
         this.tail = null;
     }
 
-    #size = 1;
+    #size = 0;
 
     append(key, value){
 
@@ -104,5 +104,66 @@ class Node{
             currNode = currNode.next;
         }
         return `${listString} -> null`;
+    }
+
+    remove(key){
+        //list is empty
+        if(!this.head) return false;
+
+        //key found in head
+        if(this.head.key === key){
+            this.head = this.head.next;
+            return true;
+        }
+
+        let currNode = this.head;
+        let prevNode = null;
+
+        while(currNode){
+            if(currNode.key === key){
+                prevNode.next = currNode.next;
+                return true;
+            }
+            prevNode = currNode;
+            currNode = currNode.next;
+        }
+        return false; 
+    }
+
+    keys(){
+        let currNode = this.head;
+        const keys = [];
+
+        while(currNode){
+            keys.push(currNode.key);
+            currNode = currNode.next;
+        }
+
+        return keys;
+    }
+
+    values(){
+        let currNode = this.head;
+        const values = [];
+
+        while(currNode){
+            values.push(currNode.value);
+            currNode = currNode.next
+        }
+
+        return values;
+    }
+    
+    entries(){
+        let currNode = this.head;
+        const entries = [];
+
+        while(currNode){
+            entries.push([currNode.key, currNode.value]);
+            currNode = currNode.next
+        }
+
+        return entries;
+
     }
 }
